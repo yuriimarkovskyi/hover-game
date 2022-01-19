@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import "hover-game-app-modes";
+@import "hover-game-body";
+@import "hover-game-button";
+@import "hover-game-element";
+@import "hover-game-elements";
+@import "hover-game-header";
+@import "hover-game-sidebar";
+
+* {
+  font-family: "Rubik", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}

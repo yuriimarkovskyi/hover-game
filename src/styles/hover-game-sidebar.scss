@@ -1,0 +1,34 @@
+.hover-game-sidebar {
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    height: 85vh;
+    row-gap: 10px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #c0c0c0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 15px;
+      background: #000000;
+    }
+  }
+
+  &__list-element {
+    font-size: 18px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #515cc6;
+  }
+}
