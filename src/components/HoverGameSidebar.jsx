@@ -1,27 +1,67 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
-const HoverGameSidebar = () => {
-  const coordinates = useSelector(state => state.coordinates.coordinates);
+const StyledHoverGameSidebar = styled.div`
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .list {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    height: 85vh;
+    row-gap: 10px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #c0c0c0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 15px;
+      background: #000000;
+    }
+  }
+
+  .list-element {
+    font-size: 18px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #515cc6;
+  }
+`;
+
+function HoverGameSidebar() {
+  const coordinates = useSelector((state) => state.coordinates.coordinates);
 
   return (
-    <div className="hover-game-sidebar">
-      <h1 className="hover-game-sidebar__title">
+    <StyledHoverGameSidebar>
+      <h1 className="title">
         Hovered squares
       </h1>
       {coordinates.length
-        ? <ul className="hover-game-sidebar__list">
-          {coordinates.map((coordinate, index) => (
-            <li key={index} className="hover-game-sidebar__list-element">
-              {coordinate}
-            </li>
-          ))}
-        </ul>
-        : <p className="hover-game-sidebar__list-element">
-          Hover something!
-        </p>}
-    </div>
+        ? (
+          <ul className="list">
+            {coordinates.map((coordinate) => (
+              <li key={coordinate} className="list-element">
+                {coordinate}
+              </li>
+            ))}
+          </ul>
+        )
+        : (
+          <p className="list-element">
+            Hover something!
+          </p>
+        )}
+    </StyledHoverGameSidebar>
   );
-};
+}
 
 export default HoverGameSidebar;

@@ -1,10 +1,22 @@
-import HoverGame from './components/HoverGame';
+import React from 'react';
+import styled from 'styled-components';
+import HoverGameHeader from './components/HoverGameHeader';
+import HoverGameBody from './components/HoverGameBody';
+
+const StyledApp = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <HoverGame/>
-    </div>
+    <StyledApp>
+      <div>
+        <HoverGameHeader />
+        <HoverGameBody />
+      </div>
+    </StyledApp>
   );
 }
 

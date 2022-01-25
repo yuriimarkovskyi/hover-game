@@ -1,9 +1,10 @@
-import {createStore, combineReducers} from 'redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
-import {coordinatesReducer} from './coordinatesReducer';
-import {gameStateReducer} from './gameStateReducer';
-import {modesReducer} from './modesReducer';
-import {modeValueReducer} from './modeValueReducer';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import { coordinatesReducer } from './coordinatesReducer';
+import { gameStateReducer } from './gameStateReducer';
+import { modesReducer } from './modesReducer';
+import { modeValueReducer } from './modeValueReducer';
 
 const rootReducer = combineReducers({
   coordinates: coordinatesReducer,
@@ -12,4 +13,4 @@ const rootReducer = combineReducers({
   modeValue: modeValueReducer,
 });
 
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
