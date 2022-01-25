@@ -1,4 +1,4 @@
-Just a small game where you can choose a game mode.
-Then depends on this squares will be rendered.
-You can hover on square and unhover it.
+Small game with the option to choose a game mode.
+Depends on a game mode squares will be rendered.
+We can hover and unhover each square.
 Coordinates of hovered squares are shown on the right side of the application.
